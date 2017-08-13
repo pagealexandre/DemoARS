@@ -20,9 +20,5 @@
 # Learn more: http://github.com/javan/whenever
 
 every 10.minutes do
-	runner "Request.check_expiration"
-end
-
-every 1.minutes do
-	runner "Request.update_request"
+	runner "Reservation.perform_async"
 end
