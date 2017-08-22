@@ -1,0 +1,8 @@
+<% if   %>
+  <h3>Welcome, <%= "#{current_user.email}" %></h3>
+  <%= "#{cookies['authorization']}" %>
+  <%= link_to "Logout", logout_path %>
+<% else %>
+  <%= link_to "Sign in with Google", "/auth/google" %>
+  <%= current_user.inspect %>
+<% end %>

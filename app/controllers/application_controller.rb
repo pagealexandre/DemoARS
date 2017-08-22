@@ -1,4 +1,4 @@
-class ApplicationController < ActionController::API
+class ApplicationController < ActionController::Base
 	attr_reader :current_user
 	include Response
 	
@@ -16,13 +16,17 @@ class ApplicationController < ActionController::API
 	protected
 		
 	  def authenticate_request!
+	  	if cookies["Authorization"].present?
+	  		@current_user = User.find_by(auth_token: cookies['Authorization'].split(' ').last)
+	  		return
+	  	end
 	    unless user_id_in_token?
 	      render json: { errors: ['Not Authenticated'] }, status: :unauthorized
 	      return
 	    end
 	    @current_user = User.find(auth_token[:user_id])
-	  rescue JWT::VerificationError, JWT::DecodeError
-	    render json: { errors: ['Not Authenticated'] }, status: :unauthorized
+	  rescue JWT::VerificationError, JWT::DecodeError, ActiveRecord::RecordNotFound
+	   	render json: { errors: ['Not Authenticated'] }, status: :unauthorized
 	  end
 
 	  private

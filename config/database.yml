@@ -9,8 +9,8 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
   host: localhost
-  username: root
-  password: secret
+  username: <%= ENV['DEMO_ARS_DATABASE_USER'] %>
+  password: <%= ENV['DEMO_ARS_DATABASE_PASSWORD'] %>
 
 development:
   <<: *default
@@ -26,4 +26,9 @@ test:
 
 production:
   <<: *default
+  host: localhost
+  adapter: postgresql
+  encoding: utf8
   database: demo_ars_production
+  pool: 5
+

@@ -2,6 +2,58 @@ require 'rails_helper'
 
 RSpec.describe ReservationsController, type: :controller do
 
+	before :each do |example|
+		unless example.metadata[:skip_auth]
+			allow(controller).to receive(:authenticate_request!).and_return(FactoryGirl.create(:user))
+		end
+	end
+
+	context "Unauthorized request", skip_auth: true do
+
+		let!(:reservation) { FactoryGirl.create(:reservation) }
+
+		it "Shows not authorized error message for GET #index" do
+			get :index
+			parsed_response = JSON.parse(response.body)
+
+			expect(response).to have_http_status(:unauthorized)
+			expect(parsed_response['errors']).to eq ["Not Authenticated"]
+		end
+
+		it "Shows not authorized error message for GET #show" do
+			get :show, :params => {id: reservation.id}
+			parsed_response = JSON.parse(response.body)
+
+			expect(response).to have_http_status(:unauthorized)
+			expect(parsed_response['errors']).to eq ["Not Authenticated"]
+		end
+
+		it "Shows not authorized error message for POST #create" do
+			post :create, :params => { guest: reservation.guest, host: reservation.host, house_id: reservation.house_id }
+			parsed_response = JSON.parse(response.body)
+
+			expect(response).to have_http_status(:unauthorized)
+			expect(parsed_response['errors']).to eq ["Not Authenticated"]
+		end
+
+		it "Shows not authorized error message for PUT #update" do
+			put :update, :params => {:id => reservation.id, :status => 1}
+			parsed_response = JSON.parse(response.body)
+
+			expect(response).to have_http_status(:unauthorized)
+			expect(parsed_response['errors']).to eq ["Not Authenticated"]
+		end
+
+		it "Shows not authorized error message for DELETE #destroy" do
+			delete :destroy, :params => { :id => reservation.id}
+			parsed_response = JSON.parse(response.body)
+
+			expect(response).to have_http_status(:unauthorized)
+			expect(parsed_response['errors']).to eq ["Not Authenticated"]
+		end
+
+	end
+
 	describe "GET #index" do
 
 		let!(:reservations) { FactoryGirl.create_list(:reservation, 5) }

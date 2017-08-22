@@ -21,7 +21,8 @@ RSpec.describe "Cron job", type: :request do
 			expect(email.to).to eq [expired_reservation.guest, expired_reservation.host]
 		end
 
-		it "remove expired reservation" do	
+		it "remove expired reservation" do
+			allow_any_instance_of(ApplicationController).to receive(:authenticate_request!).and_return(FactoryGirl.create(:user))
 			schedule.jobs[:runner].each { |job| instance_eval job[:task] }
 			get '/reservations'
 			json_response = response.body

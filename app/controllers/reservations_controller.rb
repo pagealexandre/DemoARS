@@ -23,7 +23,9 @@ class ReservationsController < ApplicationController
 			ArsMailer.reservation_notification_host(host, guest).deliver_now
 			ArsMailer.reservation_notification_guest(host, guest).deliver_now
 		else
-			render :json => { :errors => "This offer has already been taken by another client and accepted by the host" }, status: 422
+			render :json => { 
+				:errors => "This offer has already been taken by another client and accepted by the host" 
+				}, status: 422
 		end
 	end
 
