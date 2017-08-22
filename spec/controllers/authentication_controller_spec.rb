@@ -50,7 +50,7 @@ RSpec.describe AuthenticationController, type: :controller do
   			request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:google] 
 		end
 
-		it "" do
+		it "Create or update a user and a authentication cookie" do
 			
 		end
 

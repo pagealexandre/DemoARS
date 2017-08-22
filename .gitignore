@@ -27,3 +27,6 @@
 shared/log/*
 shared/pids/*
 shared/sockets/*
+
+# Mac
+.DS_Store

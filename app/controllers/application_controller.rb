@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-	attr_reader :current_user
+	alias_method :devise_current_user, :current_user
 	include Response
 	
 	rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
@@ -12,6 +12,11 @@ class ApplicationController < ActionController::Base
 	def render_not_found_response(exception)
 		render json: { error: exception.message }, status: :not_found
 	end
+
+	def current_user
+    	return @current_user = User.find_by(auth_token: cookies['Authorization'].split(' ').last) if cookies["Authorization"].present?
+    	return @current_user = User.find(auth_token[:user_id]) if user_id_in_token?
+  	end
 
 	protected
 		

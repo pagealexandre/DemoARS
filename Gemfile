@@ -26,7 +26,9 @@ gem 'omniauth-google-oauth2'
 
 gem 'figaro'
 
+#
 gem 'capybara'
+gem "show_me_the_cookies"
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'

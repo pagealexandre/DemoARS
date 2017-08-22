@@ -45,13 +45,13 @@ Rails.application.configure do
       provider: "google",
       uid: "12345678910",
       info: {
-        email: "jesse@mountainmantechnologies.com",
-        first_name: "Jesse",
-        last_name: "Spevack"
+        email: "demoarsguest@gmail.com",
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name
       },
       credentials: {
-        token: "abcdefg12345",
-        refresh_token: "12345abcdefg",
+        token: "wcAQPJTr4CeTGwL6CfFo",
+        refresh_token: Devise.friendly_token,
         expires_at: DateTime.now
       }
     })
