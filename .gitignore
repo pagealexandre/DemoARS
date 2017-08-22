@@ -23,3 +23,7 @@
 /config/application.yml
 .env
 
+# Shared folder
+shared/log/*
+shared/pids/*
+shared/sockets/*
