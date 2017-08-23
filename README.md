@@ -20,15 +20,23 @@ RESTful API implementing an ARS booking scenario.
 ### Reservations
 * You can retrieve, update, remove reservation and more. See [Reservation routes](https://github.com/pagealexandre/DemoARS/blob/master/doc/Reservation.md)
 
-## Installation
+## Installation (development environment)
 
 ### Repo
 `git clone https://github.com/pagealexandre/DemoARS.git`
 
 ### Database
 `docker-compose up -d`
+`rails db:create`
+`rails db:migrate`
+`rails db:seed`
 
-### 
+## Bundle
+`bundle install`
+
+## Launching the server
+`rails s`
+
 
 ## Choreography
 
