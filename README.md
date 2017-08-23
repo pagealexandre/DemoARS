@@ -15,7 +15,7 @@ RESTful API implementing an ARS booking scenario.
 
 ### Authentication
 
-* The API implement a token based authentication system. See [Authentication doc](https://github.com/pagealexandre/DemoARS/blob/master/doc/Authentication.md) to log in.
+* The API implement token based authentication system. See [Authentication doc](https://github.com/pagealexandre/DemoARS/blob/master/doc/Authentication.md) to log in.
 
 ## Reservations
 * You can retrieve, update, remove reservation and more. See [Reservation routes](https://github.com/pagealexandre/DemoARS/blob/master/doc/Reservation.md)
