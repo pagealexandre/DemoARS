@@ -25,6 +25,8 @@ RSpec.describe AuthenticationController, type: :controller do
 
 				post :authenticate_user, :params => { email: user.email, password: user.password }
 				parsed_response = JSON.parse(response.body)
+				expect(response).to have_http_status(200)
+				expect(response).to be_success
 				expect(parsed_response['auth_token']).to eq expected_token
 				expect(parsed_response['user']['id']).to eq user.id
 				expect(parsed_response['user']['email']).to eq user.email
@@ -37,6 +39,7 @@ RSpec.describe AuthenticationController, type: :controller do
 			it "Display an error message" do
 				post :authenticate_user, :params => { email: Faker::Internet.email, password: Faker::Internet.password }
 				parsed_response = JSON.parse(response.body)
+				expect(response).to have_http_status(401)
 				expect(parsed_response['errors']).to eq ["Invalid Username/Password"]
 			end
 		end
