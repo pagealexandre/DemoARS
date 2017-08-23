@@ -24,9 +24,9 @@
 .env
 
 # Shared folder
-shared/log/*
-shared/pids/*
-shared/sockets/*
+/shared/log/*
+/shared/pids/*
+/shared/sockets/*
 
 # Mac
 .DS_Store
