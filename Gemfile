@@ -56,6 +56,7 @@ group :development, :test do
   gem 'faker'
   gem 'rails-controller-testing'
   gem 'json_spec'
+  gem 'dotenv-rails'
 end
 
 group :development do

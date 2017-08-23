@@ -20,6 +20,16 @@ RESTful API implementing an ARS booking scenario.
 ### Reservations
 * You can retrieve, update, remove reservation and more. See [Reservation routes](https://github.com/pagealexandre/DemoARS/blob/master/doc/Reservation.md)
 
+## Installation
+
+### Repo
+`git clone https://github.com/pagealexandre/DemoARS.git`
+
+### Database
+`docker-compose up -d`
+
+### 
+
 ## Choreography
 
 ![ARS Scenario](https://github.com/pagealexandre/DemoARS/blob/master/choreography/SecureARSReservationScenario.png)
