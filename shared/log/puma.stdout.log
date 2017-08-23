@@ -58,3 +58,11 @@ Exiting
 [13495] * Starting control server on unix:///var/folders/mw/96pqc3kx4qb08fl3_9z9h2740000gn/T/puma-status-1503390576845-13493
 [13735] ! Detected parent died, dying
 [13736] ! Detected parent died, dying
+=== puma startup: 2017-08-22 23:04:04 +0200 ===
+[97200] * Starting control server on unix:///var/folders/mw/96pqc3kx4qb08fl3_9z9h2740000gn/T/puma-status-1503435844704-97200
+[97200] - Worker 1 (pid: 97210) booted, phase: 0
+[97200] - Worker 0 (pid: 97209) booted, phase: 0
+[97200] - Gracefully shutting down workers...
+[97200] === puma shutdown: 2017-08-22 23:04:51 +0200 ===
+[97200] - Goodbye!
+Exiting

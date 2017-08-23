@@ -17,11 +17,11 @@ class ReservationsController < ApplicationController
 	def create
 		if Reservation.possible?(reservation_params)
 			@reservation = Reservation.create!(reservation_params)
-			json_response(@reservation, :created)
 			host = params[:host]
 			guest = params[:guest]
 			ArsMailer.reservation_notification_host(host, guest).deliver_now
 			ArsMailer.reservation_notification_guest(host, guest).deliver_now
+			json_response(@reservation, :created)
 		else
 			render :json => { 
 				:errors => "This offer has already been taken by another client and accepted by the host" 

@@ -6766,3 +6766,4 @@ Please ensure you restarted your application after installing Devise or setting 
 	from /Users/alex/.rvm/gems/ruby-2.4.0/bin/puma:23:in `<main>'
 	from /Users/alex/.rvm/gems/ruby-2.4.0/bin/ruby_executable_hooks:15:in `eval'
 	from /Users/alex/.rvm/gems/ruby-2.4.0/bin/ruby_executable_hooks:15:in `<main>'
+=== puma startup: 2017-08-22 23:04:04 +0200 ===
