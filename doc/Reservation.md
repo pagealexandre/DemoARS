@@ -133,4 +133,34 @@ OR
 
     `curl --Header "Authorization: Bearer {JsonWEBToken}" https://api.domain.com/reservations/8 -X PUT -d 'status=2' `
  
+
+**Remove a reservation**
+----
+ Remove the specified reservation.
  
+ * **URL**
+
+  /reservations/:id
+
+* **Method:**
+  
+  `DELETE`
+
+*  **URL Params**
+
+   Id: [Integer]
+
+* **Success Response:**
+
+  * **Code:** 204 <br />
+    **Content:** `no content`
+ 
+* **Error Response:**
+
+  * **Code:** 401 UNAUTHORIZED <br />
+    **Content:** `{"errors":["Not Authenticated"]}`
+
+* **Sample Call:**
+
+    `curl -X DELETE --Header "Authorization: Bearer {JSONWebToken}"  https://api.domain.com/reservations/8 `
+    
