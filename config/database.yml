@@ -30,7 +30,5 @@ production:
   adapter: postgresql
   encoding: utf8
   database: demo_ars_production
-  username: <%= ENV['DEMO_ARS_DATABASE_USER'] %>
-  password: <%= ENV['DEMO_ARS_DATABASE_PASSWORD'] %>
   pool: 5
 
