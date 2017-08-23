@@ -17,6 +17,7 @@ if Rails.env == 'production'
 	# Default to production
 	rails_env = ENV['RAILS_ENV'] || "production"
 	environment rails_env
+	daemonize
 
 	# Set up socket location
 	bind "unix://#{shared_dir}/sockets/puma.sock"
