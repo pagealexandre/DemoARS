@@ -1,19 +1,11 @@
 ## Routes
 
+POST  /auth -> Authentication using JWT
 
-post 'auth' => 'authentication#authenticate_user'
-get 'logout', 				 to: 'authentication#destroy'
-get '/'
+GET /logout -> Log out the user
 
-`GET    /reservations -> Retrieve all the reservations`
+GET /auth/google -> Authentication using OAuth 2 (Provider : google)
 
-`POST   /reservations -> Create a reservation`
-
-`GET    /reservations/:id -> show a specific reservation`
-
-`PUT    /reservations/:id -> Update a reservation`
-
-`DELETE /reservations/:id -> Delete a reservation`
 
 **Authentication (JWT)**
 ----
@@ -49,11 +41,11 @@ Authenticate the user and return a unique token
  
  **Authentication using OAuth 2 (Google account)**
 ----
- Log in the user using a third party server.
+ Log in the user using google account.
  
  * **URL**
 
-  /
+  /auth/google
 
 * **Method:**
   
@@ -75,7 +67,7 @@ Authenticate the user and return a unique token
 
  **Logout**
 ----
- Logout the user
+ Log out the user
  
  * **URL**
 
