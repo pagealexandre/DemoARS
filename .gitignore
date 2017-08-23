@@ -30,3 +30,7 @@ shared/sockets/*
 
 # Mac
 .DS_Store
+
+
+# Rspec
+/spec/examples.txt
