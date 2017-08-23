@@ -27,6 +27,7 @@ RESTful API implementing an ARS booking scenario.
 
 ### Database
 `docker-compose up -d`
+<<<<<<< HEAD
 `rails db:create`
 `rails db:migrate`
 `rails db:seed`
@@ -36,7 +37,6 @@ RESTful API implementing an ARS booking scenario.
 
 ## Launching the server
 `rails s`
-
 
 ## Choreography
 
