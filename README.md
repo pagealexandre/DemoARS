@@ -6,10 +6,10 @@ RESTful API implementing an ARS booking scenario.
 
 ## Features
 - Authentication system : JSON Web Token and Oauth 2.0 (Google)
-- Cron jobs running in the background for set and remove expired reservation. Using `Whenever` gem
+- Cron jobs running in the background to set and remove expired reservation. (`Whenever` gem)
 - To notify participants about the state of the context (reservation cancelled, created etc...), an email service, [Mailgun](https://www.mailgun.com) has been implemented
-- Unitary tests made to verify controllers and model behavior using `spec` and `capybara` gems . You can launch the entire suit using `bundle exec rspec spec/`
-- Fake entity for test are created using `FactoryGirl` and `Faker` gems
+- Unitary tests made to verify controllers and model behavior. (`rspec` and `capybara` gems) - You can launch the entire suit using `bundle exec rspec spec/`
+- Fake entities for tests are created using `FactoryGirl` and `Faker` gems
 
 ## Documentation
 
