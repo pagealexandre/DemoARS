@@ -1,13 +1,13 @@
 ## Routes
 
-POST  /auth -> Authentication using JWT
+POST  /auth -> Authentication using JSON Web Token
 
 GET /logout -> Log out the user
 
 GET /auth/google -> Authentication using OAuth 2 (Provider : google)
 
 
-**Authentication (JWT)**
+**Authentication with JSON Web Token (JWT)**
 ----
 Authenticate the user and return a unique token
  
