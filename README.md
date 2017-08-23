@@ -25,6 +25,9 @@ RESTful API implementing an ARS booking scenario.
 ### Repo
 `git clone https://github.com/pagealexandre/DemoARS.git`
 
+## Settings
+- Copy the `.env` file in the corpus  into the project
+
 ### Database
 `docker-compose up -d`
 
