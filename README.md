@@ -28,6 +28,9 @@ RESTful API implementing an ARS booking scenario.
 ## Settings
 - Copy the `.env` file in the corpus  into the project
 
+## Bundle
+`bundle install`
+
 ### Database
 `docker-compose up -d`
 
@@ -36,9 +39,6 @@ RESTful API implementing an ARS booking scenario.
 `rails db:migrate`
 
 `rails db:seed`
-
-## Bundle
-`bundle install`
 
 ## Launching the server
 `rails s`
