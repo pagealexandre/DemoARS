@@ -2,9 +2,9 @@
 
 POST  /auth -> Authentication using JSON Web Token
 
-GET /logout -> Log out the user
-
 GET /auth/google -> Authentication using OAuth 2 (Provider : google)
+
+GET /logout -> Log out the user
 
 
 **Authentication with JSON Web Token (JWT)**
@@ -13,7 +13,7 @@ Authenticate the user and return a unique token
  
  * **URL**
 
-  /auth
+     /auth
 
 * **Method:**
   
@@ -39,13 +39,13 @@ Authenticate the user and return a unique token
 
     `curl --Header "Authorization: Bearer {MyJSONWebToken}" https://api.mydomain.com/reservations `
  
- **Authentication using OAuth 2 (Google account)**
+ **Authentication using OAuth 2 (Provider: Google)**
 ----
  Log in the user using google account.
  
  * **URL**
 
-  /auth/google
+      /auth/google
 
 * **Method:**
   
@@ -71,7 +71,7 @@ Authenticate the user and return a unique token
  
  * **URL**
 
-  /logout
+     /logout
 
 * **Method:**
   
@@ -88,5 +88,5 @@ Authenticate the user and return a unique token
 
 * **Note:**
 
-    This function never fail.
+    This function never fails.
     
